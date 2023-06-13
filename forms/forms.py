@@ -23,7 +23,7 @@ class FormularioLogin(FlaskForm):
     email = StringField('email', validators=[DataRequired(
         'Por favor, insira seu email.'), Email()])
     senha = PasswordField('senha', validators=[DataRequired()])
-    remember = BooleanField('Lembre-me', validators=[DataRequired()])
+    remember = BooleanField('Lembre-me')
     submit = SubmitField('login')
 
 
