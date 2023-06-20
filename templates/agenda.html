@@ -26,12 +26,28 @@
     }
     .card{
     width: 20%;
-    margin-left: 35%;
+    margin-left: 36%;
     margin-top: 10%;
     }
+    footer{
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    padding-right: 0;
+    background-color: #4CAF50;
+    width: 100%;
+    height: 150px;  
+    margin-top: 14%;
+  }
     </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-dark bg-inverse" style="background-color:#4CAF50;">
+          <a class="navbar-brand" href="{{ url_for('home') }}">Página Inicial <i class="fa-solid fa-dog fa-sm" style="color: #f8f1f1;"></i></a>
+      
+        </nav>
+      </header>
 
     <div style="padding-right: 0.1%;" class="col mb-4">
         <div style="background-color: #f0fff0;" class="card h-100">
@@ -50,5 +66,28 @@
         </div>
         </div>
       </div>
+      <footer>
+        <div id="footer_content">
+          <br>
+          <div id="footer_contacts">
+            <i class="fa-solid fa-dog fa-xl" style="color: #f8f1f1;"> | PetConfy</i>
+          </div>
+          <hr>
+          <div id="footer_social_media">
+            <a href="#" class="footer-link" style="color: white;" id="instagram">Instagram
+              <i class="fa-brands fa-instagram"> | </i>
+          </a>
+          <a href="#" class="footer-link" style="color: white;" id="facebook">Facebook
+              <i class="fa-brands fa-facebook-f"> | </i>
+          </a>
+          <a href="" class="footer-link" style="color: white;" id="twitter">Twitter
+            <i class="fa-brands fa-twitter"> | </i>
+          </a>
+          <a href="" class="footer-link" style="color: white;" id="whatsapp">Whatsapp
+            <i class="fa-brands fa-whatsapp"> | </i>
+          </a>
+          </div>
+        </div>       
+      </footer>
 </body>
 </html>
