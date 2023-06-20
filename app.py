@@ -101,6 +101,13 @@ def getPet():
         # Listar os pets do usuário logado
         pets = Pet.query.filter_by(user_id=user_id).all()
         return render_template('pets.html', pets=pets)
+    
+
+#########
+@app.route('/agenda')
+def agenda():
+    return render_template('agenda.html')
+#########
 
 
 @app.route('/pets/<int:id>', methods=['GET', 'DELETE'])
