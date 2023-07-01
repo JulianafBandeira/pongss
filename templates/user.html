@@ -40,7 +40,6 @@
     background-color: #4CAF50;
     width: 100%;
     height: 150px;  
-    margin-top: 7%;
   }
 
   
@@ -51,14 +50,18 @@
   <header>
     <nav class="navbar navbar-dark bg-inverse" style="background-color:#4CAF50;">
       <a class="navbar-brand" href="{{ url_for('home') }}">Página Inicial <i class="fa-solid fa-dog fa-sm" style="color: #f8f1f1;"></i></a>
+      {% if current_user.id == 1 %}
+      <a class="nav-link" style="color: #f8f1f1;" href="{{ url_for('admin') }}">Admin Area</a>
+      {% endif %}
       {% if current_user.is_authenticated %}
+      
 
       <div class="btn-group dropleft">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Menu
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" style="color: black;" href="#">Perfil
+          <a class="dropdown-item" style="color: black;" href="{{ url_for('perfil')}}">Perfil
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -100,7 +103,7 @@
         <div class="card-body">
           <h5 class="card-title">PASSEIO NO PARQUE</h5>
           <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore quod obcaecati debitis harum voluptatem.</p>
-          <a style="background-color:#4CAF50; border-color: #4CAF50;" href="#" class="btn btn-info">Cadastrar</a>
+          <a style="background-color:#4CAF50; border-color: #4CAF50;" href="{{ url_for('passeioparque')}}" class="btn btn-info">Cadastrar</a>
         </div>
       </div>
     </div>
@@ -142,36 +145,26 @@
           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet esse similique tenetur molestiae officiis.</p>
           <a style="background-color:#4CAF50; border-color: #4CAF50;" href="{{ url_for('cadastroPet')}}" class="btn btn-info">Cadastrar Pets</a>
           <p></p>
-          <a style="background-color:#4CAF50; border-color: #4CAF50;" href="{{ url_for('getPet')}}" class="btn btn-info">Mostrar pets cadastrados</a>
+          <a style="background-color:#4CAF50; border-color: #4CAF50;" href="{{ url_for('getPet')}}" class="btn btn-info">Pets cadastrados</a>
         </div>
       </div>
-    </div>
-
-    <div style="padding-right: 0.1%;" class="col mb-4">
-      <div style="background-color: #f0fff0;" class="card h-100">
-        <img src="" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">AGENDAMENTO</h5>
-          <a style="background-color:#4CAF50; border-color: #4CAF50;" href="{{ url_for('agenda')}}" class="btn btn-info">Agendar</a>
-    
-          <p></p>
-        </div>
-      </div> 
     </div>
   </div>
-<br>
 
-
-<!--<div>
-<label for="meeting-time">Choose a time for your appointment:</label>
-
-<input type="datetime-local" id="meeting-time"
-       name="meeting-time" value="2018-06-12T19:30"
-       min="2018-06-07T00:00" max="2018-06-14T00:00">
+  <div style="padding-right: 0.1%;" class="col mb-4">
+    <div style="background-color: #f0fff0;" class="card h-100">
+      <img src="" class="" alt="">
+      <div class="card-body">
+        <h5 class="card-title">AGENDAMENTOS</h5>
+        <a style="background-color:#4CAF50; border-color: #4CAF50;" href="{{ url_for('agenda')}}" class="btn btn-info">Calendário</a>
+  
+        <p></p>
       </div>
-
-
-  <!-<h4 style="color: rgb(50, 50, 224); text-align: center; text-decoration: none;"><a href="{{ url_for('logout') }}">Sair</a></h4> -->
+    </div> 
+  </div>
+</div>
+<br>
+  <!-- <h4 style="color: rgb(50, 50, 224); text-align: center; text-decoration: none;"><a href="{{ url_for('logout') }}">Sair</a></h4> -->
   <footer>
     <div id="footer_content">
       <br>
