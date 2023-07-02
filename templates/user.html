@@ -83,8 +83,10 @@
       {% endif %}
     </nav>
   </header>
-    <div>
+
+   
         {% if current_user.is_anonymous %}
+        {% extends 'homepage.html'%}
         <br>
         <a href="{{ url_for('login') }}">Login</a>
         {% else %}
@@ -93,7 +95,7 @@
         <br>
         <br>
 
-      </div>
+     
       
 
   <div class="row row-cols-1 row-cols-md-3">
